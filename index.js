@@ -6,8 +6,8 @@ const sequelize = require('./database/database');
 const cors = require('cors')
 const Category = require('./database/models/category');
 const Product = require('./database/models/product');
-// const PORT = 3333;
-const port = process.env.PORT || 9001;
+const PORT = 3333;
+// const port = process.env.PORT || 9001;
 
 Category.hasMany(Product);
 
@@ -31,8 +31,8 @@ const start = async () =>{
             err => console.log(err)
         );
         
-        app.listen(port, ()=>{
-            console.log(`\n\nServer started on ${port} port...`)
+        app.listen(PORT, ()=>{
+            console.log(`\n\nServer started on ${PORT} port...`)
         })
     }catch(err){
         console.log(err);
